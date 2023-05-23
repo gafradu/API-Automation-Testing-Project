@@ -7,11 +7,13 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "npx mocha tests --reporter mochawesome --reporter-options reportDir=customReportDir,reportFilename=api-results --timeout 10000"
+    "test": "npx mocha tests --reporter mochawesome --reporter-options reportDir=customReportDir,reportFilename=api-results --timeout 10000",
+    "curs9": "npx mocha curs9 --reporter mochawesome --reporter-options reportDir=customReportDir,reportFilename=api-results --timeout 10000"
   },
   "author": "Radu Gafton",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.1",
     "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",
     "npm": "^9.6.7",

@@ -14,7 +14,6 @@ describe("Get Single User Endpoint Scenarios", () => {
   it("Negative Flow - User Does Does Not Exist", async () => {
     await spec()
       .get(`${baseURL}/api/users/50`)
-      .withHeaders("Content-Type", "application/json")
       .expectStatus(404);
   });
 });
