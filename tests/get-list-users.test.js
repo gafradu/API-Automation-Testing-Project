@@ -1,12 +1,12 @@
 const { spec } = require("pactum");
 
 const baseURL = "https://reqres.in";
-const desiredPage = "2";
+const pageId = "2";
 
 describe("Get List Users Endpoint Scenarios", () => {
-  it("Positive Flow", async () => {
+  it("Get All Users from a Page Positive Test", async () => {
     await spec()
-      .get(`${baseURL}/api/users?page=${desiredPage}`)
+      .get(`${baseURL}/api/users?page=${pageId}`)
       .expectStatus(200);
   });
 });

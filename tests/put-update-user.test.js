@@ -1,7 +1,7 @@
 const { spec } = require("pactum");
 
 const baseURL = "https://reqres.in";
-const desiredUser = "2";
+const userId = "2";
 
 describe("Update User Endpoint Scenarios", () => {
   it("Positive Flow", async () => {
@@ -11,7 +11,7 @@ describe("Update User Endpoint Scenarios", () => {
     };
 
     await spec()
-      .put(`${baseURL}/api/users/${desiredUser}`)
+      .put(`${baseURL}/api/users/${userId}`)
       .withHeaders("Content-Type", "application/json")
       .withBody(requestBody)
       .expectBodyContains("Raducu")

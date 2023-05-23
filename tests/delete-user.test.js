@@ -1,12 +1,12 @@
 const { spec } = require("pactum");
 
 const baseURL = "https://reqres.in";
-const desiredUser = 2;
+const userId = 2;
 
 describe("Delete User Endpoint Scenarios", () => {
-  it("Positive Flow", async () => {
+  it("Delete User Positive Test", async () => {
     await spec()
-      .delete(`${baseURL}/api/users/${desiredUser}`)
+      .delete(`${baseURL}/api/users/${userId}`)
       .expectStatus(204);
   });
 });

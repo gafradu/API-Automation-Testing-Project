@@ -11,7 +11,7 @@ const requestBodyPassword = {
 };
 
 describe("Register Endpoint Scenarios", () => {
-  it("Negative Flow - Missing Email", async () => {
+  it("Try to login w/o entering the Email", async () => {
     await spec()
       .post(`${baseURL}/api/register`)
       .withHeaders("Content-Type", "application/json")
@@ -20,7 +20,7 @@ describe("Register Endpoint Scenarios", () => {
       .expectBodyContains("Missing email or username");
   });
 
-  it("Negative Flow - Missing Password", async () => {
+  it("Try to login w/o entering the Password", async () => {
     await spec()
       .post(`${baseURL}/api/register`)
       .withHeaders("Content-Type", "application/json")
@@ -29,7 +29,7 @@ describe("Register Endpoint Scenarios", () => {
       .expectBodyContains("Missing password");
   });
 
-  it("Negative Flow - User Does Not Exist", async () => {
+  it("Try to register a User which cannot be found", async () => {
     const userNotFoundBody = {
       email: "asda",
       password: "tneteqefqf",
@@ -42,7 +42,7 @@ describe("Register Endpoint Scenarios", () => {
       .expectBodyContains("user not found");
   });
 
-  it("Positive Flow", async () => {
+  it("Register a correct user Positive Test", async () => {
     await spec()
       .post(`${baseURL}/api/register`)
       .withHeaders("Content-Type", "application/json")

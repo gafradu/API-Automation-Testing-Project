@@ -3,7 +3,7 @@ const { spec } = require("pactum");
 const baseURL = "https://reqres.in";
 
 describe("Create User Endpoint Scenarios", () => {
-  it("Positive Flow", async () => {
+  it("Create a User Positive Test", async () => {
     const requestBody = {
       name: "Raymond Guran",
       job: "Tester",

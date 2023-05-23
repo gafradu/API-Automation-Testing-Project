@@ -11,7 +11,7 @@ const requestBodyPassword = {
 };
 
 describe("Login Endpoint Scenarios", () => {
-  it("Negative Flow - Missing Email", async () => {
+  it("Try to login w/o entering the Email", async () => {
     await spec()
       .post(`${baseURL}/api/login`)
       .withHeaders("Content-Type", "application/json")
@@ -20,7 +20,7 @@ describe("Login Endpoint Scenarios", () => {
       .expectBodyContains("Missing email or username");
   });
 
-  it("Negative Flow - Missing Password", async () => {
+  it("Try to login w/o entering the Password", async () => {
     await spec()
       .post(`${baseURL}/api/login`)
       .withHeaders("Content-Type", "application/json")
@@ -29,7 +29,7 @@ describe("Login Endpoint Scenarios", () => {
       .expectBodyContains("Missing password");
   });
 
-  it("Negative Flow - User Does Not Exist", async () => {
+  it("Try to login w/ a user which does not exist ", async () => {
     await spec()
       .post(`${baseURL}/api/login`)
       .withHeaders("Content-Type", "application/json")
@@ -41,7 +41,7 @@ describe("Login Endpoint Scenarios", () => {
       .expectBodyContains("user not found");
   });
 
-  it("Positive Flow", async () => {
+  it("Login with a correct user positive test", async () => {
     await spec()
       .post(`${baseURL}/api/login`)
       .withHeaders("Content-Type", "application/json")
